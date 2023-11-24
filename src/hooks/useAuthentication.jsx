@@ -26,6 +26,7 @@ export const useAuthentication = () => {
         }
     }
 
+    // criar usuário
     const createUser = async (data) => {
         checkIfIsCancelled();
         setLoading(true);
@@ -58,10 +59,46 @@ export const useAuthentication = () => {
             }
 
             setError(systemErrorMessage);
-
         }
         setLoading(false);
     }
+
+    // logout - sign out
+    const logout = () => {
+        checkIfIsCancelled();
+    
+        signOut(auth);
+    };
+
+    // login - sign in
+    const login = async(data) => {
+        checkIfIsCancelled();
+    
+        setLoading(true);
+        setError(false);
+    
+        try {
+            await signInWithEmailAndPassword(auth, data.email, data.password);
+            setLoading(false);
+
+        } catch (error) {
+            
+            let systemErrorMessage;
+
+            console.log(error.message)
+        
+            if (error.message.includes("invalid-login-credentials")) {
+                systemErrorMessage = "Usuário ou senha incorretos.";
+
+            } else {
+                systemErrorMessage = "Ocorreu um erro, por favor tenta mais tarde.";
+
+            }
+        
+            setError(systemErrorMessage);
+        }
+        setLoading(false);
+    };
 
     // deal with memory leak
     useEffect(() => {
@@ -73,6 +110,8 @@ export const useAuthentication = () => {
         createUser,
         error,
         loading,
+        logout,
+        login,
     }
 
 }
