@@ -25,18 +25,40 @@ const CreatePost = () => {
         setFormError("");
 
 
+        // validar imagem URL
+        try {
+            new URL(image);
+
+        } catch (error) {
+            return setFormError("A imagem precisa ser uma URL.");
+
+        }
+
+        // criar o array de tags
+        const tagsArray = tags.split(",").map((tag) => tag.trim().toLowerCase());
+        console.log(title)
+        console.log(image)
+        console.log(body)
+        console.log(tagsArray)
+
+        // checar todos os valores
+        if (!title || !image || !tags || !body) {
+            setFormError("Por favor, preencha todos os campos!");
+
+        }
+
         insertDocument({
             title,
             image,
             body,
-            tags,
+            tags: tagsArray,
             uid: user.uid,
             createdBy: user.displayName,
         });
 
         // redirect to home page
         navigate("/");
-    }
+    };
 
 
     return (

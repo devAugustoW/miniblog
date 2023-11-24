@@ -21,9 +21,7 @@ const Login = () => {
             password,
         };
     
-        const res = await login(user);
-        console.log(res);
-        
+        const res = await login(user);        
     };
 
     useEffect(() => {
