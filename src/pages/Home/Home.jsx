@@ -40,6 +40,7 @@ const Home = () => {
 
         <div className="post-list">
             {loading && <p>Carregando...</p>}
+            
             {posts.map((post) => ( 
                 <h3>{post.title}</h3>
             ))}
