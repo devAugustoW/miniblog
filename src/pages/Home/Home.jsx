@@ -43,6 +43,7 @@ const Home = () => {
             
             {posts.map((post) => ( 
                 <h3>{post.title}</h3>
+                
             ))}
 
          {/*   {posts && posts.map((post) => (

@@ -30,32 +30,23 @@ export const useFetchDocuments = (docCollection, search = null, uid = null) => {
             try {
                 let q;
 
-                if (search) {
-                    q = await query(
-                        collectionRef,
-                        where("tags", "array-contains", search),
-                        orderBy("createdAt", "desc")
-                    );
-                    
-                } else if (uid) {
-                    q = await query(
-                        collectionRef,
-                        where("uid", "==", uid),
-                        orderBy("createdAt", "desc")
-                    );
-                } else {
-                    q = await query(collectionRef, orderBy("createdAt", "desc"));
-
-                }
+                // busca
+                // dashboard
+                q = await query(collectionRef, orderBy("createdAt", "desc"))
 
                 await onSnapshot(q, (querySnapshot) => {
+
                     setDocuments(
                         querySnapshot.docs.map((doc) => ({
-                            id: doc.id,
+                            d: doc.id,
                             ...doc.data(),
                         }))
-                    );
+                    )
+
                 });
+
+                setLoading(false);
+                
             } catch (error) {
                 console.log(error);
                 setError(error.message);
