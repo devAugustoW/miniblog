@@ -13,7 +13,7 @@ const PostDetail = ({ post }) => {
             <p className={styles.createdby}>por: {post.createdBy}</p>
 
             <div className={styles.tags}>
-                {post.tagsArray.map((tag) => (
+                {post.tags.map((tag) => (
                     <p key={tag}> <span>#</span> {tag} </p>
                 ))}
             </div>

@@ -41,21 +41,15 @@ const Home = () => {
         <div className="post-list">
             {loading && <p>Carregando...</p>}
             
-            {posts.map((post) => ( 
-                <h3>{post.title}</h3>
-            ))}
-
-         {/*   {posts && posts.map((post) => (
-                <PostDetail key={post.id} post={post} />
-
-            ))}  * */}
+            {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
+              
              
             {posts && posts.length === 0 && (
                 <div className={styles.noposts}>
                     <p>Não foram encontrados posts</p>
                     
                     <Link to="/posts/create" className="btn">
-                    Criar primeiro post
+                        Criar primeiro post
                     </Link>
                 </div>
             )}
