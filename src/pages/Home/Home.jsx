@@ -14,8 +14,8 @@ import PostDetail from "../../components/PostDetail";
 
 const Home = () => {
     const { documents: posts, loading } = useFetchDocuments("posts");
-    const navigate = useNavigate();
     const [query, setQuery] = useState("");
+    const navigate = useNavigate();
 
     const handleSubmit = (e) => {
         e.preventDefault()
@@ -40,10 +40,9 @@ const Home = () => {
 
         <div className="post-list">
             {loading && <p>Carregando...</p>}
-            
+
             {posts && posts.map((post) => <PostDetail key={post.id} post={post} />)}
-              
-             
+                 
             {posts && posts.length === 0 && (
                 <div className={styles.noposts}>
                     <p>Não foram encontrados posts</p>

@@ -4,6 +4,7 @@ import styles from "./PostDetail.module.css";
 import { Link } from "react-router-dom";
 
 const PostDetail = ({ post }) => {
+
     return (
         <div className={styles.post_detail}>
             <img src={post.image} alt={post.title} />
@@ -18,8 +19,9 @@ const PostDetail = ({ post }) => {
                 ))}
             </div>
 
-            <Link to={`/posts/${post.id}`} className="btn btn-outline">
-                Ler
+            <Link className="btn btn-outline"
+                to={`/posts/${post.id}`} >
+                    Ler
             </Link>
         </div>
     );
