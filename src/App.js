@@ -46,20 +46,22 @@ function App() {
         <div className="App">
             <AuthProvider value={{ user }}>
                 <BrowserRouter>
-                <Navbar />
-                <div className="container">
-                    <Routes>
-                        <Route path="/" element={<Home />} />
-                        <Route path="/About" element={<About />} />
-                        <Route path="/Search" element={<Search />} />
-                        <Route path="/posts/:id" element={<Post />} />
-                        <Route path="/Login" element={!user ? <Login /> : <Navigate to="/" />} />
-                        <Route path="/Register" element={!user ? <Register /> : <Navigate to="/" />} />
-                        <Route path="/posts/create" element={user ? <CreatePost /> : <Navigate to="/login" />} />
-                        <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
-                    </Routes>
-                </div>
-                <Footer />
+                    <Navbar />
+
+                    <div className="container">
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/About" element={<About />} />
+                            <Route path="/Search" element={<Search />} />
+                            <Route path="/posts/:id" element={<Post />} />
+                            <Route path="/Login" element={!user ? <Login /> : <Navigate to="/" />} />
+                            <Route path="/Register" element={!user ? <Register /> : <Navigate to="/" />} />
+                            <Route path="/posts/create" element={user ? <CreatePost /> : <Navigate to="/login" />} />
+                            <Route path="/dashboard" element={user ? <Dashboard /> : <Navigate to="/login" />} />
+                        </Routes>
+                    </div>
+                    
+                    <Footer />
                 </BrowserRouter>
             </AuthProvider>
         </div>

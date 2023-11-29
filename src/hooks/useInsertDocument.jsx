@@ -20,7 +20,6 @@ const insertReducer = (state, action) => {
 
         default:
         return state;
-
     }
 };
 

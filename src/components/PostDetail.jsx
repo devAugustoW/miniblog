@@ -6,6 +6,8 @@ import { Link } from "react-router-dom";
 const PostDetail = ({ post }) => {
 
     return (
+        
+
         <div className={styles.post_detail}>
             <img src={post.image} alt={post.title} />
 
@@ -19,10 +21,12 @@ const PostDetail = ({ post }) => {
                 ))}
             </div>
 
+
             <Link className="btn btn-outline"
                 to={`/posts/${post.id}`} >
                     Ler
             </Link>
+
         </div>
     );
 };
