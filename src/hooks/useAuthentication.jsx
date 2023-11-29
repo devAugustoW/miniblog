@@ -21,6 +21,7 @@ export const useAuthentication = () => {
     function checkIfIsCancelled() {
         if (cancelled) {
             return;
+            
         }
     }
 
@@ -50,10 +51,13 @@ export const useAuthentication = () => {
 
             if (error.message.includes("Password")) {
                 systemErrorMessage = "A senha precisa conter pelo menos 6 caracteres.";
+
             } else if (error.message.includes("email-already")) {
                 systemErrorMessage = "E-mail já cadastrado.";
+
             } else {
                 systemErrorMessage = "Ocorreu um erro, por favor tenta mais tarde.";
+
             }
 
             setError(systemErrorMessage);
@@ -101,6 +105,7 @@ export const useAuthentication = () => {
     // deal with memory leak
     useEffect(() => {
         return () => setCancelled(true);
+        
     }, []);
 
     return {
@@ -111,5 +116,4 @@ export const useAuthentication = () => {
         logout,
         login,
     }
-
 }

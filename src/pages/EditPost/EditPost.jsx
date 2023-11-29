@@ -5,7 +5,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useAuthValue } from "../../context/AuthContext";
 import { useInsertDocument } from "../../hooks/useInsertDocument";
 import { useFetchDocument } from "../../hooks/useFetchDocument";
-// import { useUpdateDocument } from "../../hooks/useUpdateDocument";
+import { useUpdateDocument } from "../../hooks/useUpdateDocument";
 
 const EditPost = () => {
     const { id } = useParams();
@@ -21,7 +21,7 @@ const EditPost = () => {
 
     const { user } = useAuthValue();
     const navigate = useNavigate();
-  //  const { updateDocument, response } = useUpdateDocument("posts");
+    const { updateDocument, response } = useUpdateDocument("posts");
   
     // fill form data
     useEffect(() => {
@@ -32,13 +32,50 @@ const EditPost = () => {
 
             const textTags = post.tags.join(", ");
             setTags(textTags);
-            }
+        }
+
     }, [post]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         setFormError("");
-    }
+
+        // validate image
+        try {
+            new URL(image);
+                
+        } catch (error) {
+            setFormError("A imagem precisa ser uma URL.");
+                
+        }
+        
+        // create tags array
+        const tagsArray = tags.split(",").map((tag) => tag.trim());
+    
+        console.log(tagsArray);
+    
+        console.log({
+            title,
+            image,
+            body,
+            tags: tagsArray,
+        });
+    
+        const data = {
+            title,
+            image,
+            body,
+            tags: tagsArray,
+        };
+        
+        console.log(post);
+    
+        updateDocument(id, data);
+    
+        // redirect to home page
+        navigate("/dashboard");
+        
+    };
  
 
     return (
@@ -103,7 +140,7 @@ const EditPost = () => {
                             />
                         </label>
 
-                  {/*      {!response.loading && <button className="btn">Editar</button>}
+                        {!response.loading && <button className="btn">Editar</button>}
 
                         {response.loading && (
                             <button className="btn" disabled>
@@ -113,7 +150,7 @@ const EditPost = () => {
 
                         {(response.error || formError) && (
                             <p className="error">{response.error || formError}</p>
-                        )}  */} 
+                        )}  
                     </form>
                 </>
             )}

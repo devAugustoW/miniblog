@@ -13,19 +13,22 @@ const Login = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
-    
         setError("");
-    
+
         const user = {
             email,
             password,
         };
-    
+        console.log(user)
+
+        const res = await login(user);
+        console.log(res);
     };
 
     useEffect(() => {
         if (authError) {
             setError(authError);
+
         }
     }, [authError]);
 
@@ -36,27 +39,27 @@ const Login = () => {
 
             <form onSubmit={handleSubmit}>
                 <label>
-                <span>E-mail:</span>
-                <input
-                    type="email"
-                    name="email"
-                    required
-                    placeholder="E-mail do usuário"
-                    onChange={(e) => setEmail(e.target.value)}
-                    value={email}
-                />
+                    <span>E-mail:</span>
+                    <input
+                        type="email"
+                        name="email"
+                        required
+                        placeholder="E-mail do usuário"
+                        onChange={(e) => setEmail(e.target.value)}
+                        value={email}
+                    />
                 </label>
 
                 <label>
-                <span>Senha:</span>
-                <input
-                    type="password"
-                    name="password"
-                    required
-                    placeholder="Insira a senha"
-                    onChange={(e) => setPassword(e.target.value)}
-                    value={password}
-                />
+                    <span>Senha:</span>
+                    <input
+                        type="password"
+                        name="password"
+                        required
+                        placeholder="Insira a senha"
+                        onChange={(e) => setPassword(e.target.value)}
+                        value={password}
+                    />
                 </label>
 
                 {!loading && <button className="btn">Entrar</button>}
