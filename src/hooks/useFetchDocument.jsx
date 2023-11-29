@@ -43,9 +43,6 @@ export const useFetchDocument = (docCollection, id) => {
         return () => setCancelled(true);
     }, []);
 
- //   console.log(id);
- //   console.log('Documento de useFetchDocument')
- //   console.log(document);
 
     return { document, loading, error };
 };

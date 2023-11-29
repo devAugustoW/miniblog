@@ -14,7 +14,6 @@ const Post = () => {
             <h1>Post.id: {id}</h1>
            
             {loading && <p>Carregando Post</p>}
-            {!loading && <p>Loading não pega</p>}
 
             {post && (
                 <>
@@ -33,8 +32,6 @@ const Post = () => {
                     </div>
                 </>
             )}
-            {!post && <p>Post não pega</p>}
-
         </div>
     );
 };
