@@ -49,5 +49,5 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 # Licença 📑
 Este projeto está licenciado sob a MIT License.
 
-![miniBlog](https://github.com/devAugustoW/miniblog/assets/128865750/6d963853-ce2b-4d6c-8bf5-94c3a122769c)
+![miniblog](https://github.com/devAugustoW/miniblog/assets/128865750/61e5bc05-76cb-402d-8f94-70120ae916ec)
 
