@@ -34,7 +34,7 @@ const Register = () => {
 
     useEffect(() => {
         if (authError) {
-          setError(authError);
+            setError(authError);
         }
     }, [authError]);
 
