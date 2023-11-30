@@ -50,16 +50,19 @@ const CreatePost = () => {
             tags: tagsArray,
             uid: user.uid,
             createdBy: user.displayName,
+
         }).then((insertedDoc) => {
             console.log("Documento inserido:", insertedDoc);
             console.log(insertDocument)
             console.log("Título do documento inserido:", insertedDoc.title);
+
         }).catch((error) => {
             console.error("Erro ao inserir documento:", error);
+
         });
         
         // redirect to home page
-//       navigate("/");
+        navigate("/");
     };
 
     

@@ -7,6 +7,10 @@
   margin-bottom: 0.2em;
 }
 
+.post_container img {
+    max-width: 600px;
+    
+}
 .post_container .tags {
   display: flex;
   justify-content: center;

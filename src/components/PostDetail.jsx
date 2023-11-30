@@ -9,6 +9,7 @@ const PostDetail = ({ post }) => {
         
 
         <div className={styles.post_detail}>
+            
             <img src={post.image} alt={post.title} />
 
             <h2>{post.title}</h2>
