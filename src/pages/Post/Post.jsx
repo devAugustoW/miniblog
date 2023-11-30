@@ -11,8 +11,7 @@ const Post = () => {
 
     return (
         <div className={styles.post_container}>
-            <h1>Post.id: {id}</h1>
-           
+                    
             {loading && <p>Carregando Post</p>}
 
             {post && (

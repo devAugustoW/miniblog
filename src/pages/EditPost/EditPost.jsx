@@ -82,7 +82,7 @@ const EditPost = () => {
         <div className={styles.edit_post}>
             {post && (
                 <>
-                    <h2>Editando post: {post.title}</h2>
+                    <h2>Editar post</h2>
 
                     <p>Altere os dados do post como desejar</p>
 

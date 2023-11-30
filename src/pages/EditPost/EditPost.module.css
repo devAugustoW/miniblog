@@ -1,5 +1,6 @@
 .edit_post {
   text-align: center;
+  padding: 5px;
 }
 
 .edit_post h2 {
@@ -11,6 +12,10 @@
   margin-bottom: 2em;
 }
 
+.edit_post form {
+    max-width: 600px;
+    min-width: 300px;  
+}
 .edit_post .preview_title {
   margin-bottom: 0.2em;
   color: #000;
@@ -18,6 +23,7 @@
 }
 
 .image_preview {
-  max-width: 100%;
+  width: 100%;
   margin-bottom: 1em;
+  
 }
