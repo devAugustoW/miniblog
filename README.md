@@ -16,7 +16,7 @@
 
 ### 2. Instale as dependências 📚
 ```bash
-    npm instal
+    npm install
 ```
  
  ### 3. Crie um arquivo .env na raiz do projeto e adicione as credenciais do Firebase 🧮
@@ -29,7 +29,7 @@
     REACT_APP_APP_ID=seu-app-id
 ```
 <div>
-    <p>Substitua seu-api-key, seu-auth-domain, etc., pelos valores específicos do seu projeto Firebase.</p>
+    <p>Substitua seu-api-key, seu-auth-domain, etc., nas chamdas específicas ao Firebase.</p>
 </div>
 
 ### 4. Inicie a aplicação 🧭 
@@ -37,11 +37,10 @@
     npm start
 ```
 
-# Funcionalidades 🚀
+# Tecnologias 🚀
 - React
 - React Router DOM
 - Firebase (firestore, FirebaseAuthentication)
-- Axios
 
 # Contrinuições 🤝
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
