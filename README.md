@@ -1,8 +1,11 @@
 # miniblog 
+
 <div>
     <p>É uma aplicação Web desenvolvida em React para criar e compartilhar postagens. Utiliza o React Router para navegação, Firebase para armazenamentos de dados e autenticação, e Axios para fazer requisições HTTP.
     </p>
 </div>
+
+![miniblog](https://github.com/devAugustoW/miniblog/assets/128865750/61e5bc05-76cb-402d-8f94-70120ae916ec)
 
 ## Instalação 📚
 <div>
@@ -47,6 +50,3 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou env
 
 # Licença 📑
 Este projeto está licenciado sob a MIT License.
-
-![miniblog](https://github.com/devAugustoW/miniblog/assets/128865750/61e5bc05-76cb-402d-8f94-70120ae916ec)
-
