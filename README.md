@@ -7,6 +7,11 @@
 
 ![miniblog](https://github.com/devAugustoW/miniblog/assets/128865750/61e5bc05-76cb-402d-8f94-70120ae916ec)
 
+# Tecnologias 🚀
+- React
+- React Router DOM
+- Firebase (firestore, FirebaseAuthentication)
+
 ## Instalação 📚
 <div>
     <p>Certifique-se de ter o Node.js e npm instalados. Para configurtar e executar o projeto localmente, siga estes passos:</p>
@@ -39,11 +44,6 @@
 ```bash
     npm start
 ```
-
-# Tecnologias 🚀
-- React
-- React Router DOM
-- Firebase (firestore, FirebaseAuthentication)
 
 # Contrinuições 🤝
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
