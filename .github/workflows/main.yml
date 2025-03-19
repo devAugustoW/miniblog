@@ -1,0 +1,35 @@
+name: Update Packages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: write  # Permissões de escrita
+
+jobs:
+  update-packages:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '18'  # Versão compatível do Node.js
+
+      - name: Install dependencies
+        run: |
+          yarn install
+          yarn upgrade http-proxy-middleware@latest
+
+      - name: Commit and push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add yarn.lock
+          git commit -m "Update http-proxy-middleware to latest version"
+          git push
